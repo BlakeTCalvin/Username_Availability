@@ -12,6 +12,7 @@ $(document).ready(function(){
     })
 
     $('#searching_for_user').keyup(function(){
+        console.log("working")
         var data = $("#searchForm").serialize()   // capture all the data in the form in the variable data
         $.ajax({
             method: "GET",   // we are using a post request here, but this could also be done with a get
