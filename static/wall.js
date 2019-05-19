@@ -1,26 +1,23 @@
-$(document).ready(function(){
-    $('#username').keyup(function(){
-        var data = $("#regForm").serialize()   // capture all the data in the form in the variable data
-        $.ajax({
-            method: "POST",   // we are using a post request here, but this could also be done with a get
-            url: "/username",
-            data: data
-        })
-        .done(function(res){
-             $('#usernameMsg').html(res)  // manipulate the dom when the response comes back
-        })
+$("#username2").keyup(function(){
+    let data = {username2: $(this)[0].value}
+    $.ajax({
+        url: "/usersearch",
+        method: "POST",
+        data: data
     })
+    .done(function(response){
+        $("#friendsmsg").html(response);
+    })
+})
 
-    $('#searching_for_user').keyup(function(){
-        console.log("working")
-        var data = $("#searchForm").serialize()   // capture all the data in the form in the variable data
-        $.ajax({
-            method: "GET",   // we are using a post request here, but this could also be done with a get
-            url: "/usersearch",
-            data: data
-        })
-        .done(function(res){
-             $('#friendsMsg').html(res)  // manipulate the dom when the response comes back
-        })
+$("#username").keyup(function(){
+    let data = {username: $(this)[0].value}
+    $.ajax({
+        url: "/username",
+        method: "POST",
+        data: data
+    })
+    .done(function(response){
+        $("#usernamemsg").html(response);
     })
 })

@@ -27,4 +27,5 @@ def username():
 def usersearch():
     username = request.args.get("username")
     users = User.query.filter(User.username.startswith(username)).all()
+    print(users)
     return render_template("partials/usersearch.html", users=users)

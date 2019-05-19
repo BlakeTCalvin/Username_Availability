@@ -8,15 +8,13 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" 
     href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename='wall.js') }}"></script>
     <title>Document</title>
 </head>
 <body>
     <form action="/register" method="post" id="regForm">
         First Name: <input type="text" name="first_name">
         Email: <input type="text" name="email">
-        <div id="usernameMsg"></div>
+        <div id="usernamemsg"></div>
         Username: <input type="text" name="username" id="username">
         Password: <input type="text" name="password">
         Confirm Password: <input type="text" name="cpassword">
@@ -36,9 +34,11 @@
         </tr>
         {% endfor %}
     </table>
-    <form action="/usersearch" method="GET" id="searchForm">
-        Search for User: <input type="text" name="username" id="username">
-        <div id="friendsMsg"></div>
-    </form>
+    <h3>Search for Users:</h3>
+    <input type="text" name="username2" id="username2">
+    <ul id="friendsmsg"></ul>
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" defer src="{{ url_for('static', filename='wall.js') }}"></script>
 </body>
 </html>
