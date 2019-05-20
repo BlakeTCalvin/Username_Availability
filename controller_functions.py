@@ -25,7 +25,6 @@ def username():
     return render_template("partials/username.html", found=found)
 
 def usersearch():
-    username = request.args.get("username")
-    users = User.query.filter(User.username.startswith(username)).all()
+    users = User.query.filter(User.username.like("%" + request.form['username2'] + "%")).all()
     print(users)
     return render_template("partials/usersearch.html", users=users)
