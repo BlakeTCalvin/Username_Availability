@@ -11,6 +11,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Create a New User</h1>
     <form action="/register" method="post" id="regForm">
         First Name: <input type="text" name="first_name">
         Email: <input type="text" name="email">
@@ -20,6 +21,7 @@
         Confirm Password: <input type="text" name="cpassword">
         <input type="submit" value="Submit">
     </form>
+    <h1>All Users</h1>
     <table>
         <tr>
             <th>Name: </th>
@@ -34,7 +36,7 @@
         </tr>
         {% endfor %}
     </table>
-    <h3>Search for Users:</h3>
+    <h1>Search by Username:</h1>
     <input type="text" name="username2" id="username2">
     <ul id="friendsmsg"></ul>
 
